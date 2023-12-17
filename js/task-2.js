@@ -1,7 +1,19 @@
-function getShippingMessage (country, price, deliveryFee) {
-    return `Shipping to ${country } will cost ${deliveryFee + price } credits`;
-    }
-    console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
-    console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
-    console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
-    
+function formatMessage(message, maxLength) {
+
+  if (message.length <= maxLength) {return message}
+  else { return message.slice(0, maxLength) + "...";}
+}
+
+
+const result1 = formatMessage("Curabitur ligula sapien", 16);
+console.log(result1); 
+const result2 = formatMessage("Curabitur ligula sapien", 23);
+console.log(result2); 
+const result3 = formatMessage("Vestibulum facilisis purus nec", 20);
+console.log(result3); 
+const result4 = formatMessage("Vestibulum facilisis purus nec", 30);
+console.log(result4); 
+const result5 = formatMessage("Nunc sed turpis a felis in nunc fringilla", 15);
+console.log(result5); 
+const result6 = formatMessage("Nunc sed turpis a felis in nunc fringilla", 41);
+console.log(result6); 
